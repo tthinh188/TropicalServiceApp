@@ -1,0 +1,103 @@
+﻿/* Products
+----------------------------------------------------------*/
+
+.product_container {
+    display: flex;
+}
+
+.productCategories {
+    width: 200px;
+    height: 600px;
+    flex: 0.15;
+    width: 100%;
+    text-align: left;
+}
+
+.productCategoriesLabel {
+    margin-top: 5px;
+    width: 100%;
+    font-size: 15px;
+    background-color: #0033CC;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    color: white;
+}
+
+.categories {
+    list-style-type: none;
+    width: 200px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category_item {
+    padding: 5px;
+    background-color: cadetblue;
+    width: 200px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-right: 40px;
+    color: white;
+}
+
+.imageStyle {
+    width: 150px;
+    height: 18px;
+    margin: 5px 0;
+    align-content: center;
+}
+
+.chartdisplay
+{
+    flex:0.85;
+    width:778px;
+    height:600px;
+    background-color:#FFFFFF;
+}
+
+.dataGrid
+{
+    margin:5px;
+    color:Black;
+    font-family:Calibri;
+    font-size:12px;   
+    border-color:black;
+    width:768px;
+}
+.chartHeaderStyle
+{
+    background-color:#307D7E;
+    font-weight:bold;
+    color:white;
+    text-align:left;    
+}
+.chartItemStyle
+{
+    background-color:#98AFC7;
+    color:Black;
+    text-align:left;
+    height:30px;
+}
+.chartAlternatingItemStyle
+{    
+    background-color:#C6DEFF;
+    color:black;    
+    height:30px;
+}
+#rprItemTypeID table, #rprItemTypeID table tr {
+    border: 1px solid #FBB917;
+}
+
+table.table-striped > tbody > tr:nth-child(2n+1) {
+    background-color: rgba(61, 134, 135, 0.55);
+}
+
+table.table-striped > tbody > tr:nth-child(2n) {
+    background-color: rgba(25, 247, 240, 0.15);
+}

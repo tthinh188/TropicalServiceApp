@@ -1,0 +1,50 @@
+﻿@model TropicalServerApp.Models.TropicalUser
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Login";
+}
+
+<div class="container">
+    <div class="main">
+        <div id="container">
+            <form id="BodyDetail" action="Submit" method="post">
+                <label class="headerLabel">Mobile Customer Order Tracking</label><br>
+                <div id="loginBox">
+                    <div class="login_row">
+                        <label id="useridlbl">Login ID:</label>
+                        <input type="text" id="useridtextbox" name="LoginID" value="@Session["LoginID"]" /><br>
+                    </div>
+
+                    <div class="login_row">
+                        <label id="passwordlbl">Password:</label>
+                        <input type="password" id="passwordtextbox" name="password" /><br>
+                    </div>
+
+                    <div class="login_remember">
+                        <div class="login_rememberLeft">
+                            <label for="rememberId">Remember my ID</label>
+                            @if ((string)Session["rememberID"] == "on")
+                            {
+                                <input type="checkbox" id="rememberId" name="rememberID" checked>
+                            }
+                            else
+                            {
+                                <input type="checkbox" id="rememberId" name="rememberID">
+                            }
+                        </div>
+                        <button id="LoginBtn_1" type="submit">Log-In</button>
+                    </div>
+
+                </div>
+                <div id="forgot">
+                    <a id="forgotUsername" href="/Login/ForgotUsername">Forgot Username</a>
+                    <a id="forgotPassword" href="/Login/ForgotPassword">Forgot Password</a>
+                </div>
+                <div id="errorlbl">
+                    @Html.ValidationSummary()
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model TropicalServerApp.Models.Product
+@{
+    ViewBag.Title = "Product";
+    if (Session["TropicalUser"] == null)
+    {
+        Response.Redirect("~/Login/Login");
+    }
+}
+<!DOCTYPE html>
+
+<div class="main">
+    <h2>Product</h2>
+    <div class="product_container">
+        <div class="productCategories">
+            <label class="productCategoriesLabel">PRODUCT CATEGORIES</label>
+            <ul class="categories">
+                @foreach (string category in ViewBag.Categories)
+                {
+                    @Html.ActionLink(@category, "Product", "Product", new { category = @category }, new { @style = "color: white; padding: 5px; background-color: cadetblue; width: 200px;  margin-top: 10px; margin-right: 40px; text-align: center; border-radius: 10px;" })
+                }
+            </ul>
+        </div>
+        <div class="chartdisplay">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr class="bg-primary">
+                        <th>Item Number</th>
+                        <th>Item Description</th>
+                        <th>Pre Price</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var products = ViewBag.products as List<TropicalServerApp.Models.Product>;
+                        if (products != null)
+                        {
+                            foreach (var item in products)
+                            {
+                                <tr>
+                                    <th>@item.itemNumber</th>
+                                    <th>@item.itemDescription</th>
+                                    <th>@item.prePrice</th>
+                                    <th>@item.itemWeights</th>
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+
